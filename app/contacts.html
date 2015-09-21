@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" media="all" href="css/screen.css">
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+	<!-- center -->
+	<div class="center">
+		<!-- header -->
+		<header class="header">
+			<a class="header__logo" href="#"></a>
+		</header>
+	</div>
+	<!-- contacts -->
+	<div class="contacts">
+		<div id="map" class="contacts__map" style="height: 415px;"></div>
+	</div>
+	<!-- menu -->
+	<div class="menu js-menu">
+		<a class="menu__logo" href="#">
+			<span class="menu__logo-pic"></span>
+		</a>
+		<nav class="menu__nav">
+			<a class="menu__link" href="#">компания</a>
+			<a class="menu__link" href="#">компетенции</a>
+			<a class="menu__link" href="#">продукция</a>
+			<a class="menu__link is-active" href="#">horeca</a>
+			<a class="menu__link" href="#">контакты</a>
+			<a class="menu__link" href="#">блог</a>
+		</nav>
+		<div class="menu__foot">
+			<div class="menu__contacts">
+				<a class="menu__phone" href="tel:+380442388312">+38 044 238 83 12</a>
+				<a class="menu__mail" href="mailto:info@concept.glass">info@concept.glass</a>
+			</div>
+			<div class="menu__lang">
+				<a class="menu__lang-link" href="#">ua</a>
+				<a class="menu__lang-link is-active" href="#">ru</a>
+				<a class="menu__lang-link" href="#">en</a>
+			</div>
+		</div>
+		<button class="menu__btn menu__btn_white js-menu-btn"></button>
+	</div>
+</div>
+<!-- load scripts -->
+<script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
+<script>
+	var map;
+	function initMap() {
+		var myLatLng = {lat: 50.429574, lng: 30.519832};
+		var customMapType = new google.maps.StyledMapType([
+				{
+					stylers: [
+						{hue: '#becbcd'},
+						{weight: 1.5}
+					]
+				}
+			], {
+				name: 'Custom Style'
+		});
+		var customMapTypeId = 'custom_style';
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 17,
+			center: myLatLng,
+			mapTypeControlOptions: {
+				mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+			}
+		});
+		var marker = new google.maps.Marker({
+			position: myLatLng,
+			map: map
+		});
+		map.mapTypes.set(customMapTypeId, customMapType);
+		map.setMapTypeId(customMapTypeId);
+	}
+</script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCPLx_osAJ33YNibIjaqX9uH5kbYIlNJVY&callback=initMap" async defer></script>
+</body>
+</html>

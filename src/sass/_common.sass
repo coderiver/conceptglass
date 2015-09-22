@@ -18,6 +18,10 @@ button
 	background: none
 a
 	text-decoration: none
+
+*::selection
+	background: rgba(#fff,.2) 
+	color: #FF7D71 
 	
 .wrapper
 	position: relative
@@ -29,11 +33,22 @@ a
 	padding: 0 44px
 	&_sm
 		width: 1050px
+	&_the_sm
+		width: 858px 
 
 .main
 	position: relative
 	height: 100%
-	background: url(../img/bg.jpg) 50% 50% / cover 
+	overflow: hidden
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: url(../img/bg-dot.png)
+		z-index: 2 
 	&__logo
 		position: absolute
 		top: 43px
@@ -41,6 +56,7 @@ a
 		width: 140px
 		height: 60px
 		background: url(../img/logo-black.png) 0 0 / cover
+		z-index: 4
 	&__title
 		position: absolute
 		top: 231px
@@ -51,6 +67,16 @@ a
 		text-transform: uppercase
 		letter-spacing: 4.5px
 		line-height: 1.6
+		z-index: 4
+	&__video
+		position: absolute
+		top: 50%
+		left: 50%
+		width: auto
+		min-width: 100%
+		height: auto
+		min-height: 100%
+		transform: translate(-50%, -50%)
 
 .menu
 	position: fixed
@@ -61,6 +87,7 @@ a
 	background: #fff
 	transform: translateX(-316px)
 	transition: transform .4s
+	z-index: 99 
 	&.is-visible
 		transform: translateX(0)
 	&__logo
@@ -301,8 +328,21 @@ a
 
 .item
 	display: inline-block
+	position: relative
 	margin: 0 2px 4px 
 	vertical-align: top
+	&__pic
+		max-width: 100%
+		display: block
+	&__title
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 20px
+		background: rgba(#fff,.8)
+		font-size: 18px
+		color: #000 
 
 .brands
 	height: 84px
@@ -327,12 +367,17 @@ a
 		&:after
 			right: 0
 			background-image: linear-gradient(to left, #DFDFDF, rgba(#DFDFDF,0))
-	&__item
+	&__link
+		display: block
 		height: 84px
 		padding: 10px 40px
 		+vertical
+	&__link:hover &__pic
+		+gray-zero
 	&__item.slick-center
 		background: #FFF
+	&__item.slick-center &__link
+		cursor: default
 	&__item.slick-center &__pic	
 		opacity: 1 
 		+gray-zero
@@ -376,13 +421,201 @@ a
 		p
 			margin-bottom: 22px
 
+.contacts
+	padding-bottom: 100px
+	&__map
+		margin-bottom: 70px
+	&__row
+		+clr
+	&__left
+		float: left
+	&__right
+		float: right
+	&__item
+		margin-bottom: 10px
+	&__phone,
+	&__mail
+		display: inline-block
+		line-height: 1
+		color: #000 
+	&__phone
+		margin-left: -17px
+		font-size: 28px
+	&__mail
+		font-size: 26px
+	&__address
+		+fr
+		font-size: 14px
 
+.social
+	font-size: 0
+	&__link
+		display: inline-block
+		width: 28px
+		height: 28px
+		margin-left: 8px
+		background: #D3D2D2
+		border-radius: 50% 
+		vertical-align: top
+		+vertical
+		color: #fff
+		&:first-child
+			margin: 0
+		.icon
+			font-size: 16px
+			vertical-align: middle
+		.icon-vkontakte
+			font-size: 10px
+		.icon-behance
+			font-size: 12px
+		.icon-linkedin
+			padding-bottom: 2px
+			font-size: 15px
+		.icon-facebook
+			font-size: 16px
 
+.about
+	margin-bottom: 82px
+	padding: 250px 0 70px
+	background: url(../img/bg-about.jpg) 50% 50% / cover
+	color: #fff
+	&__content + &__content
+		margin-top: 40px 
+	&__title
+		 font-size: 26px
+		 line-height: 1.2
+	&__text
+		+fr
+		font-size: 14px
+		line-height: 1.6
+	&__text + &__title
+		margin-top: 13px
 
+.team
+	margin-bottom: 120px
+	&__title
+		margin-bottom: 50px
+		font-size: 26px
+		letter-spacing: 2px
+		text-align: center
+	&__list
+		font-size: 0
+		text-align: center
+	&__item
+		display: inline-block
+		width: 223px
+		margin: 0 25px 58px
+		vertical-align: top
+	&__ava
+		position: relative
+		margin-bottom: 16px
+		font-size: 0
+	&__photo-emotion
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		opacity: 0 
+		animation: photo 4s infinite
+	&__name
+		margin-bottom: 5px
+		+fb
+		font-size: 16px
+		text-transform: uppercase
+		letter-spacing: 1px 
+	&__position
+		+fr
+		font-size: 12px
+		color: #5D5D5D
+		text-transform: uppercase 
+	&__content
+		+fr
+		font-size: 14px
+		line-height: 1.7
+	@keyframes photo
+		0
+			opacity: 0
+		30%
+			opacity: 0 
+		33%
+			opacity: 1
+		66%
+			opacity: 1
+		70%
+			opacity: 0 
+		100%
+			opacity: 0
 
+.client
+	&__title
+		margin-bottom: 50px
+		font-size: 26px
+		letter-spacing: 2px
+		text-align: center
+	&__content
+		margin-bottom: 50px
+		+fr
+		font-size: 14px
+		line-height: 1.7
+	&__bg
+		background: #DFDFDF
+	&__list
+		padding: 0 155px
+		font-size: 0
+		text-align: center
+	&__item
+		display: inline-block
+		width: 25%
+		vertical-align: middle
+	&__link	
+		display: block
+		padding: 40px 20px
+	&__link:hover &__logo
+		opacity: 1 
+		+gray-zero
+	&__logo
+		max-width: 100%
+		max-height: 100%
+		opacity: .7
+		+gray
+		transition: all .2s
 
+.go
+	padding: 55px 0
+	text-align: center
+	&__btn
+		font-size: 0
+		color: #7F7F7F 
+		.icon
+			font-size: 64px 
 
-
-
-
-
+.horeca
+	position: relative
+	min-height: 940px
+	overflow: hidden
+	&__bg
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 1920px
+		height: 1600px
+		margin: -815px 0 0 -959px
+		background: url(../img/bg-horeca.jpg) no-repeat 0 0 #0d1315
+		transform: scale(2)
+		animation: bg 2s forwards
+	&__content
+		position: relative
+		padding: 240px 200px 240px 245px 
+		font-size: 40px
+		color: #fff
+		line-height: 1
+		z-index: 2 
+		p
+			margin-bottom: 40px
+	
+	@keyframes bg
+		0
+			transform: scale(2)
+		100%
+			transform: scale(1)

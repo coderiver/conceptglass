@@ -13,6 +13,11 @@ $icon-arrow-left-fill: "\EA01";
 $icon-arrow-left: "\EA02";
 $icon-arrow-right-fill: "\EA03";
 $icon-arrow-right: "\EA04";
+$icon-behance: "\EA05";
+$icon-facebook: "\EA06";
+$icon-linkedin: "\EA07";
+$icon-vkontakte: "\EA08";
+$icon-go-up: "\EA09";
 
 
 %icon {
@@ -35,3 +40,8 @@ $icon-arrow-right: "\EA04";
 .icon-arrow-left:before { content: $icon-arrow-left; }
 .icon-arrow-right-fill:before { content: $icon-arrow-right-fill; }
 .icon-arrow-right:before { content: $icon-arrow-right; }
+.icon-behance:before { content: $icon-behance; }
+.icon-facebook:before { content: $icon-facebook; }
+.icon-linkedin:before { content: $icon-linkedin; }
+.icon-vkontakte:before { content: $icon-vkontakte; }
+.icon-go-up:before { content: $icon-go-up; }

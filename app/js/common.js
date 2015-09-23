@@ -10,6 +10,19 @@ head.ready(function() {
 		});
 	}());
 
+	// types
+	(function () {
+		var fp      = $('.js-fp');
+		if (fp.length) {
+			fp.fullpage({
+				sectionSelector: '.js-fp-section',
+				anchors:['beer', 'alcohol', 'drinks', 'souvenirs'],
+				verticalCentered: false
+				// sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
+			});
+		};
+	}());
+
 	// brands
 	(function () {
 		var brands = $('.js-brands');

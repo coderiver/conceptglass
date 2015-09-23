@@ -36,5 +36,15 @@ head.ready(function() {
 		};
 	}());
 
+	// go top
+	(function () {
+		var btn = $('.js-go-top');
+		btn.on('click', function () {
+			$('html, body').animate({
+				scrollTop: 0
+			}, 500);
+		});
+	}());
+
 	
 });

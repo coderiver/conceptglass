@@ -513,18 +513,18 @@ a {
       background: url(../img/logo.png) 0 0/cover; }
   .menu__nav {
     padding: 0 120px 40px 40px; }
-  .menu__link {
-    display: inline-block;
-    margin-bottom: 15px;
-    padding: 0 5px;
-    font-size: 18px;
-    color: #000;
-    letter-spacing: 2px;
-    vertical-align: top;
-    -webkit-transition: background 0.2s;
-            transition: background 0.2s; }
-    .menu__link:hover {
-      background: #b5d6ea; }
+    .menu__nav a {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 0 5px;
+      font-size: 18px;
+      color: #000;
+      letter-spacing: 2px;
+      vertical-align: top;
+      -webkit-transition: background 0.2s;
+              transition: background 0.2s; }
+      .menu__nav a:hover {
+        background: #b5d6ea; }
   .menu__btn {
     position: absolute;
     top: 247px;

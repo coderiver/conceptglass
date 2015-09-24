@@ -113,6 +113,7 @@ a
 			letter-spacing: 2px 
 			vertical-align: top
 			transition: background .2s
+			text-transform: lowercase
 			&:hover
 				background: #b5d6ea
 	&__btn
@@ -184,15 +185,27 @@ a
 		margin: 0 0 6px -4px
 	&__lang
 		font-size: 0
-		&-link
+		li
 			display: inline-block
 			margin-right: 50px
-			padding: 5px 0
+			&.active
+				a
+					border-bottom: 1px solid 
+					cursor: default
+		a
+			display: block
+			padding: 3px 0
 			font-size: 16px
 			color: #888A8C
 			vertical-align: top
-			&.is-active
-				cursor: default
+		span
+			display: block
+			width: 20px
+			height: 17px
+			text-transform: lowercase
+			text-align: center
+			word-break: break-all
+			overflow: hidden
 
 .header
 	height: 78px
@@ -446,15 +459,15 @@ a
 
 .services
 	&__row
-		display: table
-		width: 100%
-		table-layout: fixed
+		+clr
+	&__row:nth-child(2n) &__col
+		float: right
 	&__row:nth-child(2n) &__content
 		float: left
 		width: 456px
 		padding-left: 70px
 	&__col
-		display: table-cell
+		float: left
 		width: 50%
 		height: 420px
 		background-repeat: no-repeat
@@ -554,6 +567,7 @@ a
 		font-size: 26px
 		letter-spacing: 2px
 		text-align: center
+		text-transform: uppercase
 	&__list
 		font-size: 0
 		text-align: center
@@ -609,6 +623,7 @@ a
 		font-size: 26px
 		letter-spacing: 2px
 		text-align: center
+		text-transform: uppercase
 	&__content
 		margin-bottom: 50px
 		+fr

@@ -522,7 +522,8 @@ a {
       letter-spacing: 2px;
       vertical-align: top;
       -webkit-transition: background 0.2s;
-              transition: background 0.2s; }
+              transition: background 0.2s;
+      text-transform: lowercase; }
       .menu__nav a:hover {
         background: #b5d6ea; }
   .menu__btn {
@@ -598,15 +599,26 @@ a {
     margin: 0 0 6px -4px; }
   .menu__lang {
     font-size: 0; }
-    .menu__lang-link {
+    .menu__lang li {
       display: inline-block;
-      margin-right: 50px;
-      padding: 5px 0;
+      margin-right: 50px; }
+      .menu__lang li.active a {
+        border-bottom: 1px solid;
+        cursor: default; }
+    .menu__lang a {
+      display: block;
+      padding: 3px 0;
       font-size: 16px;
       color: #888A8C;
       vertical-align: top; }
-      .menu__lang-link.is-active {
-        cursor: default; }
+    .menu__lang span {
+      display: block;
+      width: 20px;
+      height: 17px;
+      text-transform: lowercase;
+      text-align: center;
+      word-break: break-all;
+      overflow: hidden; }
 
 .header {
   height: 78px;
@@ -885,9 +897,14 @@ a {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)"; }
 
 .services__row {
-  display: table;
-  width: 100%;
-  table-layout: fixed; }
+  *zoom: 1; }
+  .services__row:after {
+    content: " ";
+    display: table;
+    clear: both; }
+
+.services__row:nth-child(2n) .services__col {
+  float: right; }
 
 .services__row:nth-child(2n) .services__content {
   float: left;
@@ -895,7 +912,7 @@ a {
   padding-left: 70px; }
 
 .services__col {
-  display: table-cell;
+  float: left;
   width: 50%;
   height: 420px;
   background-repeat: no-repeat;
@@ -1008,7 +1025,8 @@ a {
     margin-bottom: 50px;
     font-size: 26px;
     letter-spacing: 2px;
-    text-align: center; }
+    text-align: center;
+    text-transform: uppercase; }
   .team__list {
     font-size: 0;
     text-align: center; }
@@ -1078,7 +1096,8 @@ a {
   margin-bottom: 50px;
   font-size: 26px;
   letter-spacing: 2px;
-  text-align: center; }
+  text-align: center;
+  text-transform: uppercase; }
 
 .client__content {
   margin-bottom: 50px;

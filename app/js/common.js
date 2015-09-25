@@ -16,7 +16,7 @@ head.ready(function() {
 		if (fp.length) {
 			fp.fullpage({
 				sectionSelector: '.js-fp-section',
-				anchors:['beer', 'alcohol', 'drinks', 'souvenirs'],
+				anchors:['beer', 'alcohol', 'beverages', 'souvenirs'],
 				verticalCentered: false
 				// sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
 			});

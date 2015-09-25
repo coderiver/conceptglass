@@ -220,17 +220,17 @@ a
 .nav
 	height: 38px
 	padding: 5px 0 5px 13px 
-	font-size: 0
+	+justify
 	&__title,
 	&__link
 		display: inline-block
 		font-size: 18px
-		letter-spacing: 2px 
+		letter-spacing: 2px
+		text-transform: lowercase
 	&__title
-		margin-right: 135px
+		margin-right: 25px
 		+fb
 	&__link
-		margin-right: 110px
 		padding: 2px 15px 3px
 		color: #000
 		transition: background .2s
@@ -257,7 +257,7 @@ a
 				background: #562040
 				color: #fff 
 				cursor: default
-.fp-viewing-drinks
+.fp-viewing-beverages
 	background: #91a5bd
 	.nav
 		&__link
@@ -311,6 +311,7 @@ a
 		font-size: 40px
 		letter-spacing: 3px
 		transition-delay: .7s
+		text-transform: uppercase
 	&__text
 		// min-height: 470px
 		min-height: 270px

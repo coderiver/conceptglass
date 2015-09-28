@@ -10,6 +10,15 @@ head.ready(function() {
 		});
 	}());
 
+	// back
+	(function () {
+		$('.back').on('click', function (event) {
+			event.preventDefault();
+    		history.back(1);
+		});
+	}());
+
+
 	// types
 	(function () {
 		var fp      = $('.js-fp');

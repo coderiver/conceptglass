@@ -75,7 +75,7 @@
 						<div class="product__text">
 							<?php $text = get_field('text'); echo $text; ?>
 						</div>
-						<a class="product__btn btn" href="#">
+						<a class="product__btn btn" href="/type/<?php echo $post->post_name;?>">
 							<div class="btn__title"><?php $button = get_field('button'); echo $button; ?></div>
 							<div class="btn__icon">
 								<i class="icon icon-arrow-right"></i>
@@ -103,7 +103,7 @@
 						<div class="product__text">
 							<?php $text = get_field('text'); echo $text; ?>
 						</div>
-						<a class="product__btn btn" href="#">
+						<a class="product__btn btn" href="/type/<?php echo $post->post_name;?>">
 							<div class="btn__title"><?php $button = get_field('button'); echo $button; ?></div>
 							<div class="btn__icon">
 								<i class="icon icon-arrow-right"></i>
@@ -131,7 +131,7 @@
 						<div class="product__text">
 							<?php $text = get_field('text'); echo $text; ?>
 						</div>
-						<a class="product__btn btn" href="#">
+						<a class="product__btn btn" href="/type/<?php echo $post->post_name;?>">
 							<div class="btn__title"><?php $button = get_field('button'); echo $button; ?></div>
 							<div class="btn__icon">
 								<i class="icon icon-arrow-right"></i>
@@ -159,7 +159,7 @@
 						<div class="product__text">
 							<?php $text = get_field('text'); echo $text; ?>
 						</div>
-						<a class="product__btn btn" href="#">
+						<a class="product__btn btn" href="/type/<?php echo $post->post_name;?>">
 							<div class="btn__title"><?php $button = get_field('button'); echo $button; ?></div>
 							<div class="btn__icon">
 								<i class="icon icon-arrow-right"></i>

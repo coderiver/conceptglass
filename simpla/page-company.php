@@ -39,7 +39,7 @@
 					'orderby'=>'menu_order',
 					'order'=>'ASC'));
 					while (have_posts()) { the_post(); ?>
-				
+
 				<div class="team__item">
 					<div class="team__ava">
 						<?php $photo = get_field('photo'); echo '<img class="team__photo" src="'.$photo.'">'; ?>
@@ -53,11 +53,11 @@
 		<!-- center -->
 		<div class="team__center center center_the_sm">
 			<div class="team__content">
-				<?php 
-					$id = 24; 
-					$post = get_post($id); 
-					$content = apply_filters('the_content', $post->post_content); 
-					echo $content;  
+				<?php
+					$id = 24;
+					$post = get_post($id);
+					$content = apply_filters('the_content', $post->post_content);
+					echo $content;
 				?>
 			</div>
 		</div>
@@ -69,11 +69,11 @@
 	<div class="client__center center center_the_sm">
 		<div class="client__title"><?php echo get_the_title(29); ?></div>
 		<div class="client__content">
-			<?php 
-				$id = 29; 
-				$post = get_post($id); 
-				$content = apply_filters('the_content', $post->post_content); 
-				echo $content;  
+			<?php
+				$id = 29;
+				$post = get_post($id);
+				$content = apply_filters('the_content', $post->post_content);
+				echo $content;
 			?>
 		</div>
 	</div>
@@ -81,19 +81,16 @@
 		<!-- center -->
 		<div class="client__center center">
 			<div class="client__list">
-				<?php
-					query_posts(array(
-						'showposts' => 100,
-						'post_type' => 'client',
-						'orderby'=>'menu_order',
-						'order'=>'ASC'));
-						while (have_posts()) { the_post(); ?>
-					<div class="client__item">
-						<a class="client__link" href="/client/<?php echo $post->post_name; ?>">
-							<img class="client__logo" src="<?php echo the_field('logo'); ?>">
-						</a>
-					</div>
-				<?php } ?>
+
+			 <?php foreach (get_terms('client') as $cat) : ?>
+				<div class="client__item">
+					<a class="client__link" href="<?php echo get_term_link($cat->slug, 'client'); ?>">
+						<img class="client__logo" src="<?php echo z_taxonomy_image_url($cat->term_id); ?>">
+					</a>
+				</div>
+
+			 <?php endforeach; ?>
+
 			</div>
 		</div>
 	</div>

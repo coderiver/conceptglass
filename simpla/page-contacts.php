@@ -70,8 +70,8 @@
 				zoom: 17,
 				center: myLatLng,
 				disableDefaultUI: true,
-				scrollwheel: false,
-				draggable: false,
+				// scrollwheel: false,
+				// draggable: false,
 				mapTypeControlOptions: {
 					mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
 				}

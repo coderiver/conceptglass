@@ -331,6 +331,12 @@ a
 		bottom: 0
 		width: 1900px
 		margin-left: -950px
+	&_beer &__back,
+	&_alcohol &__back,
+	&_beverages &__back,
+	&_souvenirs &__back,
+	&_horeca &__back
+		color: #FFF 
 	&_beer
 		background: #fcde88
 	&_beer &__bg
@@ -340,9 +346,9 @@ a
 		color: #fff 
 	&_alcohol &__bg
 		background: url(../img/bg-alcohol.jpg) no-repeat 15% 87%
-	&_drinks
+	&_beverages
 		background: #91a5bd
-	&_drinks &__bg
+	&_beverages &__bg
 		background: url(../img/bg-drinks.jpg) no-repeat 32% 69%
 	&_souvenirs
 		background: #c7dea9
@@ -351,6 +357,9 @@ a
 		line-height: 1
 	&_souvenirs &__bg
 		background: url(../img/bg-souvenirs.jpg) no-repeat 37% 100%
+	&_horeca
+		background: #0d1215
+		color: #FFF
 
 .btn
 	display: inline-block
@@ -379,10 +388,7 @@ a
 	margin-bottom: 20px
 	font-size: 0
 	vertical-align: top
-	color: #FFF
-	&_black
-		margin-bottom: 85px
-		color: #000 
+	color: #000
 	.icon
 		font-size: 36px 
 
@@ -390,7 +396,8 @@ a
 	margin-bottom: 20px
 	font-size: 40px
 	line-height: 1.1
-	letter-spacing: 4px 
+	letter-spacing: 4px
+	text-transform: uppercase
 
 .list
 	margin: 0 -2px

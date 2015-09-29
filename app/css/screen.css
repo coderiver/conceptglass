@@ -761,6 +761,12 @@ a {
     bottom: 0;
     width: 1900px;
     margin-left: -950px; }
+  .product_beer .product__back,
+  .product_alcohol .product__back,
+  .product_beverages .product__back,
+  .product_souvenirs .product__back,
+  .product_horeca .product__back {
+    color: #FFF; }
   .product_beer {
     background: #fcde88; }
   .product_beer .product__bg {
@@ -770,9 +776,9 @@ a {
     color: #fff; }
   .product_alcohol .product__bg {
     background: url(../img/bg-alcohol.jpg) no-repeat 15% 87%; }
-  .product_drinks {
+  .product_beverages {
     background: #91a5bd; }
-  .product_drinks .product__bg {
+  .product_beverages .product__bg {
     background: url(../img/bg-drinks.jpg) no-repeat 32% 69%; }
   .product_souvenirs {
     background: #c7dea9; }
@@ -781,6 +787,9 @@ a {
     line-height: 1; }
   .product_souvenirs .product__bg {
     background: url(../img/bg-souvenirs.jpg) no-repeat 37% 100%; }
+  .product_horeca {
+    background: #0d1215;
+    color: #FFF; }
 
 .btn {
   display: inline-block;
@@ -810,10 +819,7 @@ a {
   margin-bottom: 20px;
   font-size: 0;
   vertical-align: top;
-  color: #FFF; }
-  .back_black {
-    margin-bottom: 85px;
-    color: #000; }
+  color: #000; }
   .back .icon {
     font-size: 36px; }
 
@@ -821,7 +827,8 @@ a {
   margin-bottom: 20px;
   font-size: 40px;
   line-height: 1.1;
-  letter-spacing: 4px; }
+  letter-spacing: 4px;
+  text-transform: uppercase; }
 
 .list {
   margin: 0 -2px;

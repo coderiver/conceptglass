@@ -505,12 +505,35 @@ a {
   .menu__logo {
     display: block;
     margin-bottom: 100px;
-    padding: 9px 44px; }
+    padding: 0 35px; }
     .menu__logo-pic {
       display: block;
-      width: 140px;
-      height: 60px;
-      background: url(../img/logo.png) 0 0/cover; }
+      position: relative;
+      overflow: hidden; }
+      .menu__logo-pic:before,
+      .menu__logo-pic:after {
+        content: "";
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0); }
+      .menu__logo-pic:before {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 70px;
+        height: 70px;
+        background: url(../img/logo-gradient.png) 0 0/cover;
+        -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+        -webkit-animation: logo 2s infinite linear;
+                animation: logo 2s infinite linear; }
+      .menu__logo-pic:after {
+        display: block;
+        position: relative;
+        width: 158px;
+        height: 78px;
+        background: url(../img/logo.png) 0 0/cover;
+        z-index: 2; }
   .menu__nav {
     padding: 0 120px 40px 40px; }
     .menu__nav a {
@@ -620,6 +643,22 @@ a {
       word-break: break-all;
       overflow: hidden; }
 
+@-webkit-keyframes logo {
+  0 {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes logo {
+  0 {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
 .header {
   height: 78px;
   *zoom: 1; }
@@ -629,10 +668,33 @@ a {
     clear: both; }
   .header__logo {
     float: left;
-    width: 140px;
-    height: 60px;
-    margin-top: 9px;
-    background: url(../img/logo.png) 0 0/cover; }
+    position: relative;
+    margin-left: -9px;
+    overflow: hidden; }
+    .header__logo:before,
+    .header__logo:after {
+      content: "";
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+    .header__logo:before {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 70px;
+      height: 70px;
+      background: url(../img/logo-gradient.png) 0 0/cover;
+      -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-animation: logo 2s infinite linear;
+              animation: logo 2s infinite linear; }
+    .header__logo:after {
+      display: block;
+      position: relative;
+      width: 158px;
+      height: 78px;
+      background: url(../img/logo.png) 0 0/cover;
+      z-index: 2; }
 
 .nav {
   height: 38px;

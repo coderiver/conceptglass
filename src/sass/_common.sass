@@ -96,12 +96,31 @@ a
 	&__logo
 		display: block
 		margin-bottom: 100px
-		padding: 9px 44px
+		padding: 0 35px
 		&-pic
 			display: block
-			width: 140px
-			height: 60px
-			background: url(../img/logo.png) 0 0 / cover
+			position: relative
+			overflow: hidden
+			&:before,
+			&:after
+				content: ""
+				+gpu
+			&:before
+				position: absolute
+				top: 4px
+				left: 4px
+				width: 70px
+				height: 70px
+				background: url(../img/logo-gradient.png) 0 0 / cover
+				transform: rotate(0deg)
+				animation: logo 2s infinite linear
+			&:after
+				display: block
+				position: relative
+				width: 158px
+				height: 78px
+				background: url(../img/logo.png) 0 0 / cover
+				z-index: 2 
 	&__nav
 		padding: 0 120px 40px 40px
 		a
@@ -206,16 +225,40 @@ a
 			text-align: center
 			word-break: break-all
 			overflow: hidden
-
+	@keyframes logo
+		0
+			transform: rotate(0deg)
+		100%
+			transform: rotate(360deg)
+			
 .header
 	height: 78px
 	+clr
 	&__logo
 		float: left
-		width: 140px
-		height: 60px
-		margin-top: 9px
-		background: url(../img/logo.png) 0 0 / cover
+		position: relative
+		margin-left: -9px
+		overflow: hidden
+		&:before,
+		&:after
+			content: ""
+			+gpu
+		&:before
+			position: absolute
+			top: 4px
+			left: 4px
+			width: 70px
+			height: 70px
+			background: url(../img/logo-gradient.png) 0 0 / cover
+			transform: rotate(0deg)
+			animation: logo 2s infinite linear
+		&:after
+			display: block
+			position: relative
+			width: 158px
+			height: 78px
+			background: url(../img/logo.png) 0 0 / cover
+			z-index: 2 
 
 .nav
 	height: 38px

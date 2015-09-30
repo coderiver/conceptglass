@@ -221,6 +221,19 @@ a
 	height: 38px
 	padding: 5px 0 5px 13px 
 	+justify
+	&.beer &__link:nth-of-type(1)
+		background: #fcde88
+		cursor: default
+	&.alcohol &__link:nth-of-type(2)
+		background: #562040
+		color: #fff 
+		cursor: default
+	&.beverages &__link:nth-of-type(3)
+		background: #91a5bd
+		cursor: default
+	&.souvenirs &__link:nth-of-type(4)
+		background: #c7dea9
+		cursor: default
 	&__title,
 	&__link
 		display: inline-block
@@ -236,6 +249,23 @@ a
 		transition: background .2s
 		&:last-child
 			margin: 0
+		&:nth-of-type(1)
+			&.is-active
+				background: #fcde88
+				cursor: default
+		&:nth-of-type(2)
+			&.is-active
+				background: #562040
+				color: #fff 
+				cursor: default
+		&:nth-of-type(3)
+			&.is-active
+				background: #91a5bd
+				cursor: default
+		&:nth-of-type(4)
+			&.is-active
+				background: #c7dea9
+				cursor: default
 
 .top
 	position: relative
@@ -289,7 +319,6 @@ a
 
 .product
 	position: relative
-	// height: calc(100vh - 198px)!important
 	min-height: 940px
 	padding: 43px 0 162px
 	overflow: hidden
@@ -314,7 +343,7 @@ a
 		text-transform: uppercase
 	&__text
 		// min-height: 470px
-		min-height: 270px
+		// min-height: 270px
 		margin-bottom: 50px
 		+fr
 		font-size: 14px
@@ -451,11 +480,11 @@ a
 		+vertical
 	&__link:hover &__pic
 		+gray-zero
-	&__item.slick-center
+	&__item.is-active
 		background: #FFF
-	&__item.slick-center &__link
+	&__item.is-active &__link
 		cursor: default
-	&__item.slick-center &__pic	
+	&__item.is-active &__pic	
 		opacity: 1 
 		+gray-zero
 	&__pic
@@ -584,6 +613,8 @@ a
 		width: 223px
 		margin: 0 25px 58px
 		vertical-align: top
+	&__item:hover &__photo-emotion
+		opacity: 1 
 	&__ava
 		position: relative
 		margin-bottom: 16px
@@ -594,8 +625,8 @@ a
 		left: 0
 		right: 0
 		bottom: 0
-		opacity: 0 
-		animation: photo 4s infinite
+		opacity: 0
+		transition: opacity .2s
 	&__name
 		margin-bottom: 5px
 		+fb
@@ -611,19 +642,6 @@ a
 		+fr
 		font-size: 14px
 		line-height: 1.7
-	@keyframes photo
-		0
-			opacity: 0
-		30%
-			opacity: 0 
-		33%
-			opacity: 1
-		66%
-			opacity: 1
-		70%
-			opacity: 0 
-		100%
-			opacity: 0
 
 .client
 	&__title
@@ -642,10 +660,10 @@ a
 	&__list
 		padding: 0 155px
 		font-size: 0
-		text-align: center
 	&__item
 		display: inline-block
 		width: 25%
+		text-align: center
 		vertical-align: middle
 	&__link	
 		display: block

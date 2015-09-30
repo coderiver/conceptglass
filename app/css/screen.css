@@ -646,6 +646,19 @@ a {
     height: 0px;
     visibility: hidden;
     overflow: hidden; }
+  .nav.beer .nav__link:nth-of-type(1) {
+    background: #fcde88;
+    cursor: default; }
+  .nav.alcohol .nav__link:nth-of-type(2) {
+    background: #562040;
+    color: #fff;
+    cursor: default; }
+  .nav.beverages .nav__link:nth-of-type(3) {
+    background: #91a5bd;
+    cursor: default; }
+  .nav.souvenirs .nav__link:nth-of-type(4) {
+    background: #c7dea9;
+    cursor: default; }
   .nav__title,
   .nav__link {
     display: inline-block;
@@ -662,6 +675,19 @@ a {
             transition: background 0.2s; }
     .nav__link:last-child {
       margin: 0; }
+    .nav__link:nth-of-type(1).is-active {
+      background: #fcde88;
+      cursor: default; }
+    .nav__link:nth-of-type(2).is-active {
+      background: #562040;
+      color: #fff;
+      cursor: default; }
+    .nav__link:nth-of-type(3).is-active {
+      background: #91a5bd;
+      cursor: default; }
+    .nav__link:nth-of-type(4).is-active {
+      background: #c7dea9;
+      cursor: default; }
 
 .top {
   position: relative;
@@ -743,7 +769,6 @@ a {
             transition-delay: .7s;
     text-transform: uppercase; }
   .product__text {
-    min-height: 270px;
     margin-bottom: 50px;
     font-family: "Clear Sans Regular", Arial, sans-serif;
     font-size: 14px;
@@ -892,11 +917,11 @@ a {
   .brands__link:hover .brands__pic {
     filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
     -webkit-filter: grayscale(0%); }
-  .brands__item.slick-center {
+  .brands__item.is-active {
     background: #FFF; }
-  .brands__item.slick-center .brands__link {
+  .brands__item.is-active .brands__link {
     cursor: default; }
-  .brands__item.slick-center .brands__pic {
+  .brands__item.is-active .brands__pic {
     opacity: 1;
     filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
     -webkit-filter: grayscale(0%); }
@@ -1050,6 +1075,8 @@ a {
     width: 223px;
     margin: 0 25px 58px;
     vertical-align: top; }
+  .team__item:hover .team__photo-emotion {
+    opacity: 1; }
   .team__ava {
     position: relative;
     margin-bottom: 16px;
@@ -1061,8 +1088,8 @@ a {
     right: 0;
     bottom: 0;
     opacity: 0;
-    -webkit-animation: photo 4s infinite;
-            animation: photo 4s infinite; }
+    -webkit-transition: opacity 0.2s;
+            transition: opacity 0.2s; }
   .team__name {
     margin-bottom: 5px;
     font-family: "Room Bold", Arial, sans-serif;
@@ -1078,34 +1105,6 @@ a {
     font-family: "Clear Sans Regular", Arial, sans-serif;
     font-size: 14px;
     line-height: 1.7; }
-
-@-webkit-keyframes photo {
-  0 {
-    opacity: 0; }
-  30% {
-    opacity: 0; }
-  33% {
-    opacity: 1; }
-  66% {
-    opacity: 1; }
-  70% {
-    opacity: 0; }
-  100% {
-    opacity: 0; } }
-
-@keyframes photo {
-  0 {
-    opacity: 0; }
-  30% {
-    opacity: 0; }
-  33% {
-    opacity: 1; }
-  66% {
-    opacity: 1; }
-  70% {
-    opacity: 0; }
-  100% {
-    opacity: 0; } }
 
 .client__title {
   margin-bottom: 50px;
@@ -1125,12 +1124,12 @@ a {
 
 .client__list {
   padding: 0 155px;
-  font-size: 0;
-  text-align: center; }
+  font-size: 0; }
 
 .client__item {
   display: inline-block;
   width: 25%;
+  text-align: center;
   vertical-align: middle; }
 
 .client__link {

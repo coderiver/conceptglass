@@ -782,7 +782,7 @@ a {
     cursor: default; }
 
 .fp__section {
-  height: auto !important;
+  height: 100% !important;
   opacity: 0;
   -webkit-transition: opacity 0.2s;
           transition: opacity 0.2s; }
@@ -800,9 +800,8 @@ a {
 
 .product {
   position: relative;
-  min-height: 940px;
-  padding: 43px 0 162px;
-  overflow: hidden; }
+  min-height: 100%;
+  padding: 43px 0 162px; }
   .product__content {
     position: relative;
     width: 430px;
@@ -937,7 +936,8 @@ a {
     padding: 20px;
     background: rgba(255, 255, 255, 0.8);
     font-size: 18px;
-    color: #000; }
+    color: #000;
+    text-transform: lowercase; }
 
 .brands {
   height: 84px;

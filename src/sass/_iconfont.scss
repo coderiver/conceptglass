@@ -18,6 +18,8 @@ $icon-facebook: "\EA06";
 $icon-linkedin: "\EA07";
 $icon-vkontakte: "\EA08";
 $icon-go-up: "\EA09";
+$icon-search: "\EA0B";
+$icon-close: "\EA0C";
 
 
 %icon {
@@ -45,3 +47,5 @@ $icon-go-up: "\EA09";
 .icon-linkedin:before { content: $icon-linkedin; }
 .icon-vkontakte:before { content: $icon-vkontakte; }
 .icon-go-up:before { content: $icon-go-up; }
+.icon-search:before { content: $icon-search; }
+.icon-close:before { content: $icon-close; }

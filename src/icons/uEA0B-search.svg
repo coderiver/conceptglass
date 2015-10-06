@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M15.4860412,14.0287899 L18.74786,17.29107 L17.33346,18.70527 L14.0947674,15.4661193 C12.582607,16.7341618 10.6782945,17.4 8.7,17.4 C6.4,17.4 4.2,16.5 2.6,14.9 C0.9,13.2 0,11 0,8.7 C0,6.4 0.9,4.2 2.6,2.5 C4.2,0.9 6.4,0 8.7,0 C11,0 13.2,0.9 14.8,2.5 C17.9534396,5.6534396 18.18212,10.6133481 15.4860412,14.0287899 Z M8.7,1 C6.6,1 4.7,1.8 3.2,3.3 C1.8,4.7 1,6.7 1,8.7 C1,10.8 1.8,12.7 3.3,14.1 C4.8,15.6 6.7,16.4 8.7,16.4 C10.8,16.4 12.7,15.6 14.2,14.1 C17.2,11.1 17.2,6.2 14.2,3.2 C12.7,1.8 10.8,1 8.7,1 L8.7,1 Z" id="search" fill="#000000" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

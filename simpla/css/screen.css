@@ -765,23 +765,23 @@ a {
   .product_beer {
     background: #fcde88; }
   .product_beer .product__bg {
-    background: url(../img/bg-beer.jpg) no-repeat 33% 74%; }
+    background: url(../img/bg-beer.jpg) no-repeat 33% 0%; }
   .product_alcohol {
     background: #562040;
     color: #fff; }
   .product_alcohol .product__bg {
-    background: url(../img/bg-alcohol.jpg) no-repeat 15% 87%; }
+    background: url(../img/bg-alcohol.jpg) no-repeat 15% 0%; }
   .product_drinks {
     background: #91a5bd; }
   .product_drinks .product__bg {
-    background: url(../img/bg-drinks.jpg) no-repeat 32% 69%; }
+    background: url(../img/bg-drinks.jpg) no-repeat 32% 0%; }
   .product_souvenirs {
     background: #c7dea9; }
   .product_souvenirs .product__title {
     padding-top: 7px;
     line-height: 1; }
   .product_souvenirs .product__bg {
-    background: url(../img/bg-souvenirs.jpg) no-repeat 37% 100%; }
+    background: url(../img/bg-souvenirs.jpg) no-repeat 37%  0%; }
 
 .btn {
   display: inline-block;

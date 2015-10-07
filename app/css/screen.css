@@ -862,23 +862,23 @@ a {
   .product_beer {
     background: #fcde88; }
   .product_beer .product__bg {
-    background: url(../img/bg-beer.jpg) no-repeat 33% 74%; }
+    background: url(../img/bg-beer.jpg) no-repeat 33% 0%; }
   .product_alcohol {
     background: #562040;
     color: #fff; }
   .product_alcohol .product__bg {
-    background: url(../img/bg-alcohol.jpg) no-repeat 15% 87%; }
+    background: url(../img/bg-alcohol.jpg) no-repeat 15% 0%; }
   .product_beverages {
     background: #91a5bd; }
   .product_beverages .product__bg {
-    background: url(../img/bg-drinks.jpg) no-repeat 32% 69%; }
+    background: url(../img/bg-drinks.jpg) no-repeat 32% 0%; }
   .product_souvenirs {
     background: #c7dea9; }
   .product_souvenirs .product__title {
     padding-top: 7px;
     line-height: 1; }
   .product_souvenirs .product__bg {
-    background: url(../img/bg-souvenirs.jpg) no-repeat 37% 100%; }
+    background: url(../img/bg-souvenirs.jpg) no-repeat 37% 0%; }
   .product_horeca {
     background: #0d1215;
     color: #FFF; }
@@ -930,20 +930,38 @@ a {
   display: inline-block;
   position: relative;
   margin: 0 2px 4px;
-  vertical-align: top; }
+  vertical-align: top;
+  overflow: hidden; }
   .item__pic {
     max-width: 100%;
-    display: block; }
+    display: block;
+    -webkit-transition: all 0.2s linear;
+            transition: all 0.2s linear; }
   .item__title {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
+    margin-bottom: -70px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.8);
     font-size: 18px;
     color: #000;
+    -webkit-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+    opacity: 0;
     text-transform: lowercase; }
+  .item:hover .item__pic {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition: all 0.2s linear;
+            transition: all 0.2s linear; }
+  .item:hover .item__title {
+    -webkit-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+    opacity: 1;
+    margin-bottom: 0; }
 
 .brands {
   height: 84px;

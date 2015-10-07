@@ -411,23 +411,23 @@ a
 	&_beer
 		background: #fcde88
 	&_beer &__bg
-		background: url(../img/bg-beer.jpg) no-repeat 33% 74%
+		background: url(../img/bg-beer.jpg) no-repeat 33% 0%
 	&_alcohol
 		background: #562040
 		color: #fff 
 	&_alcohol &__bg
-		background: url(../img/bg-alcohol.jpg) no-repeat 15% 87%
+		background: url(../img/bg-alcohol.jpg) no-repeat 15% 0%
 	&_beverages
 		background: #91a5bd
 	&_beverages &__bg
-		background: url(../img/bg-drinks.jpg) no-repeat 32% 69%
+		background: url(../img/bg-drinks.jpg) no-repeat 32% 0%
 	&_souvenirs
 		background: #c7dea9
 	&_souvenirs &__title
 		padding-top: 7px
 		line-height: 1
 	&_souvenirs &__bg
-		background: url(../img/bg-souvenirs.jpg) no-repeat 37% 100%
+		background: url(../img/bg-souvenirs.jpg) no-repeat 37% 0%
 	&_horeca
 		background: #0d1215
 		color: #FFF
@@ -479,19 +479,31 @@ a
 	position: relative
 	margin: 0 2px 4px 
 	vertical-align: top
+	overflow: hidden
 	&__pic
 		max-width: 100%
 		display: block
+		transition: all .2s linear
 	&__title
 		position: absolute
 		left: 0
 		right: 0
 		bottom: 0
+		margin-bottom: -70px
 		padding: 20px
 		background: rgba(#fff,.8)
 		font-size: 18px
 		color: #000
+		transition: all .2s linear
+		opacity: 0
 		text-transform: lowercase
+	&:hover &__pic
+		transform: scale(1.2)
+		transition: all .2s linear
+	&:hover &__title
+		transition: all .2s linear
+		opacity: 1
+		margin-bottom: 0
 
 .brands
 	height: 84px

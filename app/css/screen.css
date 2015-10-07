@@ -1404,6 +1404,8 @@ a {
   color: #000; }
   .article__pic {
     font-size: 0; }
+    .article__pic-el {
+      max-width: 100%; }
   .article__title {
     position: relative;
     max-width: 210px;

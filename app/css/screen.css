@@ -1506,7 +1506,7 @@ a {
     margin-bottom: 15px;
     font-size: 0; }
     .content__pic-el {
-      max-with: 100%; }
+      max-width: 100%; }
   .content__date {
     margin-bottom: 25px;
     font-family: "Clear Sans Regular", Arial, sans-serif;

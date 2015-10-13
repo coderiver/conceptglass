@@ -123,8 +123,9 @@ a
 				z-index: 2 
 	&__nav
 		padding: 0 120px 40px 40px
+		+clr
 		a
-			display: inline-block
+			float: left
 			margin-bottom: 15px
 			padding: 0 5px
 			font-size: 18px
@@ -133,6 +134,7 @@ a
 			vertical-align: top
 			transition: background .2s
 			text-transform: lowercase
+			clear: both 
 			&:hover
 				background: #b5d6ea
 	&__btn

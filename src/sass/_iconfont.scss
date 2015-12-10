@@ -18,8 +18,12 @@ $icon-facebook: "\EA06";
 $icon-linkedin: "\EA07";
 $icon-vkontakte: "\EA08";
 $icon-go-up: "\EA09";
+$icon-instagram: "\EA0A";
 $icon-search: "\EA0B";
 $icon-close: "\EA0C";
+$icon-vimeo: "\EA0D";
+$icon-pinterest: "\EA0E";
+$icon-youtube: "\EA0F";
 
 
 %icon {
@@ -47,5 +51,9 @@ $icon-close: "\EA0C";
 .icon-linkedin:before { content: $icon-linkedin; }
 .icon-vkontakte:before { content: $icon-vkontakte; }
 .icon-go-up:before { content: $icon-go-up; }
+.icon-instagram:before { content: $icon-instagram; }
 .icon-search:before { content: $icon-search; }
 .icon-close:before { content: $icon-close; }
+.icon-vimeo:before { content: $icon-vimeo; }
+.icon-pinterest:before { content: $icon-pinterest; }
+.icon-youtube:before { content: $icon-youtube; }

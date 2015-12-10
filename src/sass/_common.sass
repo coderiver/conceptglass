@@ -36,14 +36,26 @@ a
 	padding: 0 44px
 	&_sm
 		width: 1050px
+		+r(770)
+			width: auto
 	&_the_sm
 		width: 858px 
+		+r(770)
+			width: auto
 
 .main
 	position: relative
 	height: 100%
 	background: #B5D6E9 
 	overflow: hidden
+	.lt-ie9 &
+		background: url(../img/bg-home.jpg) no-repeat 0 0
+		background-size: cover
+		background-position: 50% 50%
+	+r(700)   
+		background: url(../img/bg-home.jpg) no-repeat 0 0
+		background-size: auto 100%
+		background-position: 50% 50%
 	&:after
 		content: ""
 		position: absolute
@@ -92,6 +104,10 @@ a
 		height: auto
 		min-height: 100%
 		transform: translate(-50%, -50%)
+		+r(700)
+			display: none
+		.lt-ie9 &
+			display: none
 
 .menu
 	position: fixed
@@ -103,10 +119,26 @@ a
 	transform: translateX(-100%)
 	transition: transform .4s
 	z-index: 99
+	// min-height: 600px 
+	.menu__in
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		overflow: auto    
+	.menu__in1
+		position: relative
+		min-height: 600px 
+	.lt-ie9 &
+		left: -316px
+		min-height: 600px 
 	+r(767)
 		width: 274px
 	&.is-visible
 		transform: translateX(0)
+		.lt-ie9 &
+			left: 0 
 	&__logo
 		display: block
 		margin-bottom: 100px
@@ -118,10 +150,17 @@ a
 			display: block
 			position: relative
 			overflow: hidden
+			.lt-ie9 &
+				background: #fff url(../img/logo1.png) no-repeat 0 0 
+				width: 162px 
+				height: 61px 
+				margin-top: 7px 
 			&:before,
 			&:after
 				content: ""
 				+gpu
+				.lt-ie9 &
+					display: none
 			&:before
 				position: absolute
 				top: 4px
@@ -131,6 +170,8 @@ a
 				background: url(../img/logo-gradient.png) 0 0 / cover
 				transform: rotate(0deg)
 				animation: logo 2s infinite linear
+				.lt-ie9 &
+					display: none
 				+r(767)
 					top: 4px
 					left: 0px
@@ -143,16 +184,19 @@ a
 				height: 78px
 				background: url(../img/logo.png) 0 0 / cover
 				z-index: 2
+				.lt-ie9 &
+					display: none
 				+r(767)
 					width: 106px
 					height: 52px
 	&__nav
 		padding: 0 120px 40px 40px
+		padding-bottom: 140px 
 		+clr
 		+r(767)
 			padding: 0 80px 10px 30px 
 		a
-			float: left
+			display: block
 			margin-bottom: 15px
 			padding: 0 5px
 			font-size: 18px
@@ -172,7 +216,16 @@ a
 		padding: 0 10px
 		height: 62px
 		background: #000
+		background-color: #000 
 		font-size: 0
+		.lt-ie9 &
+			display: block
+			font-size: 14px 
+			left: auto
+			right: -56px 
+			border: 1px solid #000
+			background-color: #000 
+			background: #000 url(../img/nav.png) no-repeat 50% 50% 
 		+r(767)
 			top: 140px
 			width: 46px
@@ -189,12 +242,16 @@ a
 			top: 25px
 			height: 2px
 			background: #FFF
+			.lt-ie9 &
+				display: none
 			+r(767)
 				top: 19px
 		&:after
 			top: 30px 
 			height: 7px
 			box-shadow: 0 2px 0 0 #fff inset, 0 -2px 0 0 #fff inset
+			.lt-ie9 &
+				display: none
 			+r(767)
 				top: 24px
 		&_white
@@ -204,6 +261,8 @@ a
 			&:after
 				box-shadow: 0 2px 0 0 #000 inset, 0 -2px 0 0 #000 inset
 		&.is-active
+			.lt-ie9 &
+				background: #000 url(../img/close.png) no-repeat 50% 50% 
 			&:before,
 			&:after
 				top: 30px
@@ -256,7 +315,7 @@ a
 					border-bottom: 1px solid 
 					cursor: default
 		a
-			display: block
+			display: inline-block
 			padding: 3px 0
 			font-size: 16px
 			color: #888A8C
@@ -285,6 +344,11 @@ a
 		position: relative
 		margin-left: -9px
 		overflow: hidden
+		.lt-ie9 &
+			background: #fff url(../img/logo1.png) no-repeat 0 0
+			width: 162px  
+			height: 62px 
+			margin-top: 7px 
 		&:before,
 		&:after
 			content: ""
@@ -318,17 +382,19 @@ a
 	height: 38px
 	padding: 5px 0 5px 13px 
 	+justify
-	&.beer &__link:nth-of-type(1)
+	+r(770)
+		text-align: left
+	&.beer .nav__beer
 		background: #fcde88
 		cursor: default
-	&.alcohol &__link:nth-of-type(2)
+	&.alcohol .nav__alcohol
 		background: #562040
 		color: #fff 
 		cursor: default
-	&.beverages &__link:nth-of-type(3)
+	&.beverages .nav__beverages
 		background: #91a5bd
 		cursor: default
-	&.souvenirs &__link:nth-of-type(4)
+	&.souvenirs .nav__souvenirs
 		background: #c7dea9
 		cursor: default
 	&__title,
@@ -340,12 +406,58 @@ a
 	&__title
 		margin-right: 25px
 		+fb
+		+r(400)
+			font-size: 10px 
+			display: none
+	.select
+		display: none
+		position: relative
+		width: 180px 
+		height: 22px 
+		.select__value
+			display: block
+			background: #91a5bd 
+			font-size: 15px 
+			color: #fff 
+			height: 22px 
+			padding-left: 13px 
+			line-height: 22px 
+			transition: .3s linear background
+			.fp-viewing-beer &
+				background: #fcde88 
+			.fp-viewing-alcohol &
+				background: #562040 
+			.fp-viewing-beverages &
+				background: #91a5bd 
+			.fp-viewing-souvenirs &
+				background: #c7dea9 
+			i
+				transform: rotate(-90deg)
+				position: absolute
+				right: 5px
+				top: 3px  
+		select
+			appearance: none
+			position: absolute
+			opacity: 0
+			left: 0
+			top: 0
+			bottom: 0
+			right: 0     
+			z-index: 2
+			width: 100%
+			height: 100%   
+		+r(770)
+			display: inline-block
+		
 	&__link
 		padding: 2px 15px 3px
 		color: #000
 		transition: background .2s
 		+r(1023)
 			padding: 2px 8px 3px
+		+r(770)
+			display: none
 		&:last-child
 			margin: 0
 		&:nth-of-type(1)
@@ -374,41 +486,41 @@ a
 .fp-viewing-beer
 	background: #fcde88
 	.nav
-		&__link
-			&:nth-of-type(1)
-				background: #fcde88
-				cursor: default
+		&__beer
+			background: #fcde88
+			cursor: default
 .fp-viewing-alcohol
 	background: #562040
 	.nav
-		&__link
-			&:nth-of-type(2)
-				background: #562040
-				color: #fff 
-				cursor: default
+		&__alcohol
+			background: #562040
+			color: #fff 
+			cursor: default
 .fp-viewing-beverages
 	background: #91a5bd
 	.nav
-		&__link
-			&:nth-of-type(3)
-				background: #91a5bd
-				cursor: default
+		&__beverages
+			background: #91a5bd
+			cursor: default
 .fp-viewing-souvenirs
 	background: #c7dea9
 	.nav
-		&__link
-			&:nth-of-type(4)
-				background: #c7dea9
-				cursor: default
+		&__souvenirs
+			background: #c7dea9
+			cursor: default
 
 .fp
 	&__section
 		height: 100%!important
 		opacity: 0
 		transition: opacity .2s
+		+r(767)
+			opacity: 1
 		&.active
 			transition-delay: .7s
 			opacity: 1
+			+r(767)
+				transition-delay: 0s
 			.product
 				&__title,
 				&__text,
@@ -420,6 +532,10 @@ a
 	position: relative
 	min-height: 100%
 	padding: 43px 0 162px
+	padding-bottom: 0 
+	+r(770)
+		padding-bottom: 40px 
+		padding-top: 10px 
 	&__content
 		position: relative
 		width: 38%
@@ -430,6 +546,9 @@ a
 		+r(767)
 			width: 100%
 			margin: 0
+			padding-left: 15px 
+			width: auto
+			padding-top: 10px 
 	&__title,
 	&__text,
 	&__btn
@@ -445,6 +564,8 @@ a
 		+r(767)
 			margin-bottom: 15px
 			font-size: 20px
+		+r(600)
+			width: 50% 
 	&__text
 		margin-bottom: 50px
 		+fr
@@ -462,19 +583,51 @@ a
 		float: right
 		+r(767)
 			float: left
+	.btn_projects
+		.lt-ie9 &
+			width: 140px 
+			height: 36px 
+			background: transparent url(../img/projects.png) no-repeat 0 0 
+	.btn_download
+		height: 28px 
+		width: 28px 
+		background: transparent url(../img/down.png) no-repeat 0 0 
+		transition-delay: 0
+		transition: none
+		*
+			display: none
+		.icon-download
+			display: none
+		&:hover
+			background: transparent url(../img/down_hover.png) no-repeat 0 0 
+			transition-delay: 0
+			transition: none
+		// .lt-ie9 &
+		// 	width: 36px 
+		// 	height: 36px 
+		// 	background: transparent url(../img/downloadbutton.png) no-repeat 0 0 
 	&__bg
 		position: absolute
 		top: 0
-		left: 50%
-		bottom: 0
-		width: 1900px
-		margin-left: -950px
+		left: 0
+		bottom: 115px
+		right: 32% 
+		background-size: contain !important
+		background-position: 10% 50% !important 
+		// width: 1900px
+		// margin-left: -950px
 		+r(767)
 			position: relative
 			left: auto
+			right: auto 
+			bottom: auto 
+			top: auto 
 			width: 100%
-			height: 290px
+			height: 200px
+			height: 40vh 
 			margin: 0
+			background-position: 50% 50% !important
+			background-size: contain  
 	&_beer &__back,
 	&_alcohol &__back,
 	&_beverages &__back,
@@ -484,31 +637,31 @@ a
 	&_beer
 		background: #fcde88
 	&_beer &__bg
-		background: url(../img/bg-beer.jpg) no-repeat 33% 0%
+		background: url(../img/bg-beer1.jpg) no-repeat 33% 0%
 		+r(767)
-			background: url(../img/bg-beer.jpg) no-repeat 0 0 / contain
+			background: url(../img/bg-beer1.jpg) no-repeat 0 0 / contain
 	&_alcohol
 		background: #562040
 		color: #fff 
 	&_alcohol &__bg
-		background: url(../img/bg-alcohol.jpg) no-repeat 15% 0%
+		background: url(../img/bg-alcohol1.jpg) no-repeat 15% 0%
 		+r(767)
-			background: url(../img/bg-alcohol.jpg) no-repeat 0 0 / contain
+			background: url(../img/bg-alcohol1.jpg) no-repeat 0 0 / contain
 	&_beverages
 		background: #91a5bd
 	&_beverages &__bg
-		background: url(../img/bg-drinks.jpg) no-repeat 32% 0%
+		background: url(../img/bg-drinks1.jpg) no-repeat 32% 0%
 		+r(767)
-			background: url(../img/bg-drinks.jpg) no-repeat 0 0 / contain
+			background: url(../img/bg-drinks1.jpg) no-repeat 0 0 / contain
 	&_souvenirs
 		background: #c7dea9
 	&_souvenirs &__title
 		padding-top: 7px
 		line-height: 1
 	&_souvenirs &__bg
-		background: url(../img/bg-souvenirs.jpg) no-repeat 37% 0%
+		background: url(../img/bg-souvenirs1.jpg) no-repeat 37% 0%
 		+r(767)
-			background: url(../img/bg-souvenirs.jpg) no-repeat 0 0 / contain
+			background: url(../img/bg-souvenirs1.jpg) no-repeat 0 0 / contain
 	&_horeca
 		background: #0d1215
 		color: #FFF
@@ -570,10 +723,19 @@ a
 	margin: 0 2px 4px 
 	vertical-align: top
 	overflow: hidden
+	min-width: 318px 
+	min-height: 357px 
 	&__pic
 		max-width: 100%
 		display: block
 		transition: all .2s linear
+		-webkit-backface-visibility:hidden
+		filter: none
+		-webkit-filter: blur(0px)
+		-moz-filter: blur(0px)
+		-ms-filter: blur(0px)
+		filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='0')
+		
 	&__title
 		position: absolute
 		left: 0
@@ -587,13 +749,27 @@ a
 		transition: all .2s linear
 		opacity: 0
 		text-transform: lowercase
+		.lt-ie9 &
+			opacity: 1
+			display: none 
+			margin-bottom: 0 
 	&:hover &__pic
-		transform: scale(1.2)
+		transform: scale(.95)
 		transition: all .2s linear
+		filter: none
+		-webkit-filter: blur(0px)
+		-moz-filter: blur(0px)
+		-ms-filter: blur(0px)
+		.lt-ie9 &
+			width: 90%
+			margin-top: 5%
+			margin-left: 5%   
 	&:hover &__title
 		transition: all .2s linear
 		opacity: 1
 		margin-bottom: 0
+		.lt-ie9 &
+			display: block
 
 .brands
 	height: 84px
@@ -604,6 +780,8 @@ a
 	&__list
 		width: 888px
 		margin: 0 auto
+		+r(770)
+			width: auto
 		&:before,
 		&:after
 			content: ""
@@ -623,7 +801,7 @@ a
 		height: 84px
 		padding: 10px 40px
 		+vertical
-	&__link:hover &__pic
+	.no-ie &__link:hover &__pic
 		+gray-zero
 	&__item.is-active
 		background: #FFF
@@ -636,18 +814,49 @@ a
 		max-width: 100%
 		max-height: 100%
 		vertical-align: middle
-		opacity: .7 
+		opacity: 1
+		
+	.no-ie &__pic
 		+gray
+		opacity: .7 
+	.slick-prev
+		.no-retina &
+			background: transparent 
+			&:before
+				content: ''
+				background:  url(../img/prev.png) no-repeat 50% 50% 
+				height: 36px 
+				width: 36px 
+				display: block
+	.slick-next
+		.no-retina &
+			background: transparent
+			&:before
+				content: ''
+				background: url(../img/next.png) no-repeat 50% 50% 
+				height: 36px 
+				width: 36px 
+				display: block
+
+		
 
 .services
 	&__row
 		+clr
-	&__row:nth-child(2n) &__col
+	.even &__col
 		float: right
-	&__row:nth-child(2n) &__content
+		+r(770)
+			float: none
+			// padding-bottom: 0
+			// height: auto  
+	.even &__content
 		float: left
 		width: 456px
 		padding-left: 70px
+		+r(770)
+			float: none
+			width: auto
+			padding-left: 60px 
 	&__col
 		float: left
 		width: 50%
@@ -656,15 +865,33 @@ a
 		background-position: 50% 50%
 		background-size: cover   
 		vertical-align: top
+		+r(770)
+			width: auto
+			float: none
+			height: auto
+		&[style]
+			+r(770)
+				width: 100%
+				height: 0
+				padding-bottom: 40%  
+				float: none
+			
 	&__content	
 		float: right
 		width: 446px
 		padding: 40px 60px
+		+r(770)
+			float: none
+			width: auto
+			height: auto
+			padding: 20px 60px
 	&__title
 		margin-bottom: 20px
 		font-size: 40px
 		line-height: 1.1
 		letter-spacing: 2px
+		+r(600)
+			font-size: 27px 
 	&__text
 		+fr
 		font-size: 14px
@@ -674,14 +901,29 @@ a
 
 .contacts
 	padding-bottom: 100px
+	#map
+		height: 415px 
+		+r(770)
+			height: 200px 
+	+r(770)
+		padding-bottom: 20px 
 	&__map
 		margin-bottom: 70px
+		height: 415px 
+		+r(770)
+			margin-bottom: 30px 
+			height: 200px 
 	&__row
 		+clr
 	&__left
 		float: left
+		+r(770)
+			float: none
+			margin-bottom: 20px 
 	&__right
 		float: right
+		+r(770)
+			float: none
 	&__item
 		margin-bottom: 10px
 	&__phone,
@@ -728,8 +970,12 @@ a
 .about
 	margin-bottom: 82px
 	padding: 250px 0 70px
-	background: url(../img/bg-about.jpg) 50% 50% / cover
+	background: url(../img/bg-about.jpg) 50% 50%
+	background-size: cover 
 	color: #fff
+	+r(770)
+		padding: 60px 0 40px 30px
+		margin-bottom: 40px 
 	&__content + &__content
 		margin-top: 40px 
 	&__title
@@ -744,22 +990,43 @@ a
 
 .team
 	margin-bottom: 120px
+	+r(770)
+		margin-bottom: 40px 
 	&__title
 		margin-bottom: 50px
 		font-size: 26px
 		letter-spacing: 2px
 		text-align: center
 		text-transform: uppercase
+		.icon
+			display: none
+			transform: rotate(-90deg)
+			+r(770)
+				display: inline-block
+				vertical-align: middle
 	&__list
 		font-size: 0
 		text-align: center
+		.lt-ie9 &
+			width: 100%
+			zoom: 1
+			overflow: hidden 
+		+r(770)
+			display: none
 	&__item
 		display: inline-block
 		width: 223px
 		margin: 0 25px 58px
 		vertical-align: top
+		.lt-ie9 &
+			display: inline
+			zoom: 1 
+			display: inline-block
 	&__item:hover &__photo-emotion
 		opacity: 1 
+		.lt-ie9 &
+			display: block
+			z-index: 10 
 	&__ava
 		position: relative
 		margin-bottom: 16px
@@ -772,6 +1039,9 @@ a
 		bottom: 0
 		opacity: 0
 		transition: opacity .2s
+		.lt-ie9 &
+			opacity: 1
+			display: none 
 	&__name
 		margin-bottom: 5px
 		+fb
@@ -787,6 +1057,8 @@ a
 		+fr
 		font-size: 14px
 		line-height: 1.7
+		+r(770)
+			display: none
 
 .client
 	&__title
@@ -805,23 +1077,46 @@ a
 	&__list
 		padding: 0 155px
 		font-size: 0
+		.lt-ie9 &
+			width: 100%
+			overflow: hidden
+			zoom: 1 
+			padding-bottom: 50px 
+		+r(770)
+			padding: 20px 50px 
 	&__item
 		display: inline-block
 		width: 25%
 		text-align: center
 		vertical-align: middle
+		.lt-ie9 &
+			display: inline
+			zoom: 1 
+			width: 23% 
+			float: left
+			text-align: center
+			height: 120px
+		+r(620)
+			width: 50%
 	&__link	
 		display: block
-		padding: 40px 20px
+		padding: 40px 20px 
+		+r(400)
+			padding: 20px 20px 
 	&__link:hover &__logo
 		opacity: 1 
 		+gray-zero
+		.lt-ie10 &
+			filter: none
 	&__logo
 		max-width: 100%
 		max-height: 100%
 		opacity: .7
 		+gray
 		transition: all .2s
+		.lt-ie10 &
+			filter: none
+			opacity: 1 
 
 .go
 	padding: 55px 0
@@ -836,6 +1131,12 @@ a
 	position: relative
 	min-height: 940px
 	overflow: hidden
+	+r(770)
+		min-height: 100vh 
+		background: #0d1315 url(../img/bg-horeca_m.jpg) no-repeat 0 0
+		-webkit-background-size: 100% auto
+		-o-background-size: 100% auto
+		background-size: 100% auto
 	&__bg
 		position: absolute
 		top: 50%
@@ -846,21 +1147,31 @@ a
 		background: url(../img/bg-horeca.jpg) no-repeat 0 0 #0d1315
 		transform: scale(2)
 		animation: bg 2s forwards
+		+r(770)
+			display: none
 	&__wrap
 		position: relative
 		padding: 240px 200px 240px 245px
 		+clr
 		z-index: 2 
+		+r(770)
+			padding: 100px 0  0 40px
 	&__content
 		min-height: 270px
 		margin-bottom: 50px
 		font-size: 40px
 		color: #fff
 		line-height: 1
+		+r(770)
+			font-size: 20px
+			min-height: auto 
+			margin-bottom: 20px 
 		p
 			margin-bottom: 40px
 	&__btn
 		float: right
+		+r(770)
+			float: left
 	
 	@keyframes bg
 		0
@@ -878,6 +1189,16 @@ a
 	padding: 18px 40px
 	background: #CCE3F1
 	text-align: center
+	+r(550)
+		width: auto
+		position: relative
+		top: 0
+		left: 0
+		margin: 0
+		height: auto   
+		padding: 18px 20px 
+	.no-subscribe &
+		display: none
 	&__close
 		position: absolute
 		top: 0
@@ -899,25 +1220,48 @@ a
 	&__form
 		font-size: 0
 		text-align: center
+		p
+			display: inline-block
+			font-size: 14px 
 	&__input,
-	&__btn
+	&__btn,
+	input[type=text],
+	input
 		display: inline-block
 		vertical-align: middle
-	&__input
+	&__input,input[type=text]
 		width: 190px
 		height: 28px
 		padding: 0 12px
 		border: 1px solid #C2C2C2
 		font-size: 14px
 		line-height: 28px
+		
+		background: transparent
+		border: none  
+		border-bottom: 1px solid #555 
+		text-align: center
+		&:focus
+			background: rgba(#fff, .4) 
+		+r(550)
+			width: 180px 
+	label
+		display: none
+	br
+		display: none
 	&__btn
 		height: 28px
 		padding: 0 12px
-		font-size: 0
+		font-size: 14px
 		transition: all .2s
+		background: transparent 
+		margin-right: -76px 
+		opacity: 0 
 		&:hover
 			background: #000
 			color: #FFF  
+			.subscribe__btn-icon
+				color: #ff7e72 
 		&-title,
 		&-icon
 			display: inline-block
@@ -937,6 +1281,10 @@ a
 		position: relative
 		max-width: 1088px
 		padding-top: 108px
+		+r(600)
+			padding: 0 !important 
+		.no-subscribe &
+			padding-top: 50px 
 	&__wrap
 		padding: 55px 25px
 		background: #FFF 
@@ -948,12 +1296,22 @@ a
 	&__aside
 		display: table-cell
 		vertical-align: top
+		+r(770)
+			width: auto
+			display: block
 	&__section
 		padding-right: 20px
+		+r(550)
+			padding-right: 0 
 	&__aside
 		width: 310px
 		padding-left: 20px 
 		border-left: 1px solid #c2c2c2
+		+r(770)
+			width: auto
+			display: block
+			border-left: none 
+			padding-left: 0 
 	&__list
 		margin: 0 -10px
 		font-size: 0
@@ -963,6 +1321,9 @@ a
 		margin-bottom: 40px
 		padding: 0 10px
 		vertical-align: top
+		+r(550)
+			width: auto
+			display: block
 
 .article
 	display: block
@@ -1001,6 +1362,13 @@ a
 .search
 	position: relative
 	margin-bottom: 25px
+	&_mobile
+		display: none
+		+r(550)
+			display: block
+	&_desktop
+		+r(550)
+			display: none
 	&__input
 		width: 100%
 		height: 35px
@@ -1021,6 +1389,9 @@ a
 
 .widget
 	margin-bottom: 25px
+	&>*
+		+r(770)
+			width: 100% !important
 
 .pop
 	margin-bottom: 25px
@@ -1087,12 +1458,123 @@ a
 			text-decoration: underline
 			&:hover
 				text-decoration: none
+.icon-download
+	width: 22px 
+	height: 22px 
+	display: inline-block
+	background: url(../img/download.png) no-repeat 0 0 
+	.lt-ie9 &
+		display: inline
+		zoom: 1
 
 
+.fancybox-overlay
+	background: transparent !important
+.ov
+	position: fixed
+	top: 200px
+	left: 200px
+	bottom: 200px
+	right: 200px
+	background: #fff
+	z-index: 8000
+	transition: all .3s linear
+	opacity: 1
+	.is-souvenirs &
+		background-color: #c7dea9
+	.is-beer &
+		background-color: #fcde88
+	.is-alcohol &
+		background-color: #562040
+	.is-beverages &
+		background-color: #91a5bd
+	.is-horeca &
+		background-color: #000
 
+.gogo
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	opacity: 1
 
+.btn_download
+	clear: both
+	margin-top: 10px 
+	padding: 7px !important 
+	*
+		.lt-ie9 &
+			float: right
+	.lt-ie9 &
+		display: inline
+		zoom: 1
+		float: right
+	.btn__title
+		display: none
+	.btn__icon
+		margin-left: 0 
+		.lt-ie9 &
+			display: inline
+			zoom: 1
+			float: right
+	
 
+.content-wrapper
+	transition: transform .4s
+	transform: translate(0,0)
+	.lt-ie9 &
+		position: relative
+	.is-menu &
+		transform: translate(315px,0)
+		transition: transform .4s
+		+r(767)
+			transform: translate(274px,0)
+		+rm(1600)
+			transform: translate(0,0)
+		.lt-ie9 &
+			position: relative
+			left: 315px 
+.is-menu
+	.header__logo
+		opacity: 0
+		transition: opacity .2s linear 
+.wrapper
+	overflow: hidden
+	height: auto 
+	.is-homepage &
+		height: 100% 
+		.content-wrapper
+			height: 100% 
+.blog-socials
+	background: #fff 
+	.social__link:hover
+		background: #b5d6ea 
+	&:before
+		+r(550)
+			position: absolute
+			top: -40px 
+			background: #fff url(../img/arrowbottom.png) no-repeat 50% 50%
+			height: 30px 
+			left: 0 
+			right: 0
+			content: ' ' 
+	+r(550)
+		display: block
+		position: fixed
+		bottom: 0
+		left: 0
+		right: 0
+		padding: 10px    
+		border-top: 10px solid #b5d6e9 
+#map
+	background: url(../img/map.png) no-repeat 50% 50%
+	background-size: cover  
 
++r(600)
+	.is-menu
+		#map,.header,.main__logo,.blog,.about__content,.team,.client__center,.client__content,.client__title,.services__text,.services__title,.nav,.product__bg,.product__center,.horeca__center
+			opacity: 0
+			transition: opacity .2s linear 
 
 
 

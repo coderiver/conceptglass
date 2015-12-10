@@ -1,5 +1,14 @@
 head.ready(function() {
-
+	$('.team__title').click(function(event) {
+		$(this).next().slideToggle();
+	});
+	$('.nav select').change(function(event) {
+		$('.select__value span').text($(this).val());
+		ind = $(".nav select")[0].selectedIndex;
+		// $('.nav__link').eq(ind).trigger('click');
+		var fp = $('.js-fp');
+		fp.fullpage.moveTo(ind+1);
+	});
 	// menu
 	(function () {
 		var btn  = $('.js-menu-btn'),
@@ -7,6 +16,7 @@ head.ready(function() {
 		btn.on('click', function () {
 			btn.toggleClass('is-active');
 			menu.toggleClass('is-visible');
+			$('body').toggleClass('is-menu');
 		});
 	}());
 
